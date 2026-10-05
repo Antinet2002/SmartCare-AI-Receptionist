@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>📊 Receptionist Admin Dashboard</h1>
+        <a class="admin-link" href="/">← Back to Receptionist</a>
+    </header>
+
+    <section class="card">
+        <h2>Appointments</h2>
+
+        {% if appointments %}
+        <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Service</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for appointment in appointments %}
+                <tr>
+                    <td>{{ appointment.customer_name }}</td>
+                    <td>{{ appointment.phone or '-' }}</td>
+                    <td>{{ appointment.email or '-' }}</td>
+                    <td>{{ appointment.appointment_date }}</td>
+                    <td>{{ appointment.appointment_time }}</td>
+                    <td>{{ appointment.service or '-' }}</td>
+                    <td><span class="status">{{ appointment.status }}</span></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+        {% else %}
+            <p>No appointments yet.</p>
+        {% endif %}
+    </section>
+</div>
+</body>
+</html>

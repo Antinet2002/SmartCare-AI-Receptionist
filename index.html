@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCare AI Receptionist</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>🤖 SmartCare AI Receptionist</h1>
+        <p>Your intelligent virtual receptionist</p>
+        <a class="admin-link" href="/admin">Admin Dashboard</a>
+    </header>
+
+    <section class="card">
+        <div id="chat">
+            <div class="bot message">
+                Hello! 👋 I'm your AI receptionist. How can I help you today?
+            </div>
+        </div>
+
+        <div class="input-area">
+            <input id="message" type="text"
+                   placeholder="Ask about services or appointments...">
+            <button onclick="sendMessage()">Send</button>
+            <button class="voice-btn" onclick="startVoice()">🎤</button>
+        </div>
+    </section>
+
+    <section class="card booking">
+        <h2>📅 Book Appointment</h2>
+
+        <div class="grid">
+            <input id="name" placeholder="Full Name">
+            <input id="phone" placeholder="Phone Number">
+            <input id="email" type="email" placeholder="Email">
+            <select id="service">
+                <option>General Consultation</option>
+                <option>Business Consultation</option>
+                <option>Technical Support</option>
+                <option>Product Demonstration</option>
+            </select>
+            <input id="date" type="date">
+            <input id="time" type="time">
+        </div>
+
+        <button onclick="bookAppointment()">Book Appointment</button>
+        <p id="bookingResult"></p>
+    </section>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
