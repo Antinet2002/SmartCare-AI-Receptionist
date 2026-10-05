@@ -1,3 +1,4 @@
+<img width="1920" height="1020" alt="Screenshot 2026-10-05 233254" src="https://github.com/user-attachments/assets/c2ac8cae-b856-4ff0-90c5-72a099ba3f41" />
 # 🤖 SmartCare AI Receptionist
 
 A web-based AI Receptionist application built with **Python, Flask, HTML, CSS, JavaScript, and SQLite**.
